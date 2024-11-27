@@ -1,0 +1,94 @@
+tải window terminal: https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-US&gl=US
+tải powershell: https://github.com/PowerShell/PowerShell/releases/tag/v7.4.6
+lưu ý** nhấn CTRL+F "win-x64.msi" nếu win bạn là win64 
+
+
+tải Nerd Font githup
+{
+	https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.3.0
+	lưu ý** nhấn CTRL+F "Meslo.zip"
+
+	giải nén
+	xoá 2 thư mục: "LICENSE.txt" và "readme.md"
+	
+	CTRL+A  "chuột phải"  chọn "istall"
+}
+
+mở window terminal -> setting -> starup + -> default profile => PowerShell
+						    + -> default terminal application => windows terminal
+						    + -> launch on machine => off
+
+					-> defaults -> Appearance + -> color scheme => One half dark
+									  + -> font face => MesloLGM Nerd Font
+
+
+Git
+{
+	ai chưa có git thì tải: https://git-scm.com
+	mở terminal kiểm tra => "git"
+}
+
+
+cài scoop và ohmyposh
+{
+	vào: https://scoop.sh
+	
+	copy hai lệnh trong khung QUICKSTART bỏ vào terminal
+	lưu ý là chạy từng lệnh một
+
+	sao khi cài thành công nhập tiếp:   "scoop install oh-my-posh"
+}
+
+
+cài user profile
+{
+	C:\Users\{username_folde}\.config
+		tạo thư mục "powershell"
+			C:\Users\{username_folde}\.config\powershell
+				tao file "user_profile.ps1" vào
+}
+
+
+mở lại terminal:  "$PROFILE.CurrentUserCurrentHost"
+copy đường dẫn vd: C:\Users\{username_folde}\Documents\PowerShell
+
+cài powershell profile
+{
+		tao file "Microsoft.PowerShell_profile.ps1" vào
+		 . $env:USERPROFILE\.config\powershell\user_profile.ps1
+}
+
+
+tìm themes 
+{
+	vào: https://ohmyposh.dev/docs/themes
+	tìm themes ưng ý
+
+	mở terminal chạy lệnh: 
+	"oh-my-posh init pwsh --config 'C:\Users\{username_folder}\scoop\apps\oh-my-posh\current\themes\{theme_name}.omp.json' | Invoke-Expression"
+}
+
+
+nếu themes ok thì copy câu lệnh vừa rồi " oh-my-posh init pwsh --config 'C:\Users\{username_folder}\scoop\apps\oh-my-posh\current\themes\{theme_name}.omp.json' | Invoke-Expression"
+vào file "user_profile.ps1"
+
+
+thêm icon
+{
+	mở terminal: "Install-Module -Name Terminal-Icons -Scope CurrentUser -Force"
+
+	dán "Import-Module Terminal-Icons" vào file "user_profile.ps1"
+}
+
+
+
+
+vscode
+{
+	mở vscode
+	vào setting
+	tìm "font terminal"
+	tại "Terminal>Integranted: Font Family"  
+	nhập vào "MesloLGM Nerd Font"
+	là ok
+}
